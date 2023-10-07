@@ -6,9 +6,9 @@ from model import pose_estimator
 #from model import level_regressor
 #from model import level_inference
 
-camera = webcam.WebcamCamera(1)
-pose = pose_estimator.PoseEstimator()
-img = camera.take_photo()
+#camera = webcam.WebcamCamera(1)
+#pose = pose_estimator.PoseEstimator()
+#img = camera.take_photo()
 
 """
 while True:
