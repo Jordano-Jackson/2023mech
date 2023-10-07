@@ -1,1 +1,4 @@
 .DS_Store
+/datasets/level_data
+temp
+/saved_params
