@@ -1,17 +1,25 @@
-import socket
-
-ESP32_AP_IP = "192.168.4.1"  # ESP32-C3 SoftAP IP 주소
-ESP32_PORT = 80
-
-def sendNum():
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((ESP32_AP_IP, ESP32_PORT))
-    
+import bluetooth
+def sendNum(data):
+    # ESP32의 Bluetooth 주소 (MAC 주소) 입력
+    esp32_mac_address = "XX:XX:XX:XX:XX:XX"
+    # 블루투스 소켓 생성
+    sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+    # ESP32와 연결 시도
     try:
-        while True:
-            data = input("Enter a number to send: ")  # Mac에서 보낼 숫자 입력
-            client_socket.send(data.encode())
-            print("Data sent:", data)
-    except KeyboardInterrupt:
-        client_socket.close()
-
+        sock.connect((esp32_mac_address, 1))
+    except bluetooth.btcommon.BluetoothError as e:
+        print("Error:", str(e))
+        sock.close()
+        exit(1)
+    # 숫자 전송
+    if data >= 0:
+        sock.send(“1\n”)
+        sock.send(str(data))
+        sock.send(“\n”)
+    else:
+        sock.send(“0\n”)
+        data = -1 * data
+        sock.send(str(data))
+        sock.send(“\n”)
+    # 소켓 닫기
+    sock.close()
