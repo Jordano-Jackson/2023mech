@@ -5,6 +5,8 @@ import numpy as np
 
 from camera import webcam
 from model import pose_estimator
+from seat_detector import SeatDetector
+from communication import sendNum
 #from model import level_regressor
 #from model import level_inference
 
@@ -12,6 +14,7 @@ from model import pose_estimator
 #pose = pose_estimator.PoseEstimator()
 #img = camera.take_photo()
 
+<<<<<<< HEAD
 curData = 1 #initial position
 
 """
@@ -32,3 +35,9 @@ newData = pose.inference()
 
 sendNum(curData - newData)
 newData = curData
+=======
+if __name__ == '__main__' :
+    mySeatDetector = SeatDetector()
+    if mySeatDetector.seat_check(mode = 'exist') :
+        sendNum(10)
+>>>>>>> 054b211 (main function modified)
