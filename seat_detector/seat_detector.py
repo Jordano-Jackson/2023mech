@@ -3,7 +3,7 @@ import numpy as np
 
 class SeatDetector() :
 
-    def seat_check(mode = 'exist'):
+    def seat_check(mode = 0):
         ## mode can be 'exist' or 'not exist'
         yolo_weight_path = 'thirdparty/yolov3/yolov3.weights'
         yolo_config_path = 'thirdparty/yolov3/yolov3.cfg'
@@ -46,13 +46,14 @@ class SeatDetector() :
                     scores = detection[5:]
                     class_id = np.argmax(scores)
                     confidence = scores[class_id]
-                    if confidence > 0.3 and class_id == 0 and mode == 'exist':  # Class ID 0 corresponds to humans in most YOLO implementations
-                        #print("human detected with confidence: ", confidence)
+                    #print(mode)
+                    if confidence > 0.3 and class_id == 0:  # Class ID 0 corresponds to humans in most YOLO implementationss
+                        print("human detected with confidence: ", confidence)
                         return True
                     
-                    elif confidence < 0.05 and class_id == 0 and mode == 'not exist' :
+                    elif confidence < 0.05 and class_id == 0 and mode == 1 :
                         return True
-                        """
+                        
                         center_x = int(detection[0] * width)
                         center_y = int(detection[1] * height)
                         w = int(detection[2] * width)
@@ -85,7 +86,7 @@ class SeatDetector() :
             # exit loop when 'q' key is pressed
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-            """
+            
         cap.release()
         cv2.destroyAllWindows()
 
