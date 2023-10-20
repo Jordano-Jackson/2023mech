@@ -6,6 +6,11 @@
 ## Seat Detector
 Seat detector is made utilizing YOLOv3.
 
+![yolo_demo_480](https://github.com/Jordano-Jackson/2023mech/assets/19871043/d1256607-8920-4567-bebe-f4a66a0d2f01)
+
+
+
+
 ## Pose Estimator
 Pose Estimator is based on MoveNet thunder version 
 
