@@ -42,8 +42,9 @@ class PoseEstimator(nn.Module) :
         # Run model inference.
         outputs = self.model(self.input)
 
-
+        """
         keypoints = outputs['output_0']
+        
         print(keypoints)
         # Define body part connections.
         connections = [
@@ -60,7 +61,7 @@ class PoseEstimator(nn.Module) :
             (12, 14),  # right hip to right knee
             (14, 16)  # right knee to right ankle
         ]
-
+        
         # Create a figure and axis to plot the image. 
         ####### for debugging purpose ############
         fig, ax = plt.subplots()
@@ -104,6 +105,7 @@ class PoseEstimator(nn.Module) :
 
         # Show the plotted image.
         plt.show()
+        """
         
             # Output is a [1, 1, 17, 3] tensor.
         keypoints = tf.squeeze(outputs['output_0'])
