@@ -3,7 +3,7 @@ import numpy as np
 
 class SeatDetector() :
 
-    def seat_check(mode = 0):
+    def is_sitting(mode = 0):
         ## mode can be 'exist' or 'not exist'
         yolo_weight_path = 'thirdparty/yolov3/yolov3.weights'
         yolo_config_path = 'thirdparty/yolov3/yolov3.cfg'
@@ -47,7 +47,7 @@ class SeatDetector() :
                     class_id = np.argmax(scores)
                     confidence = scores[class_id]
                     #print(mode)
-                    if confidence > 0.3 and class_id == 0:  # Class ID 0 corresponds to humans in most YOLO implementationss
+                    if confidence > 0.3 and class_id == 0 and mode == 0:  # Class ID 0 corresponds to humans in most YOLO implementationss
                         print("human detected with confidence: ", confidence)
                         return True
                     
