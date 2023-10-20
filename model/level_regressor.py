@@ -1,9 +1,7 @@
 ## LevelRegressor 
 
+import torch
 import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import Dataset
-from torch.utils.data import DataLoader
 
 class LevelRegressor(nn.Module) :
     def __init__(self) :
@@ -21,3 +19,7 @@ class LevelRegressor(nn.Module) :
     def forward(self, x) :
         x = self.layer(x)
         return x
+    
+    def load_parameter(self, file_path):
+        state_dict = torch.load(file_path)
+        self.load_state_dict(state_dict)
