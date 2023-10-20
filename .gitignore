@@ -2,3 +2,4 @@
 /datasets/level_data
 temp
 /saved_params
+/thirdparty/yolov3/yolov3.weights
