@@ -3,6 +3,7 @@
 ## Overview
 ![image](https://github.com/Jordano-Jackson/2023mech/assets/19871043/d461c4ac-83dc-43a8-bf87-17728cdc69a9)
 
+# Modules 
 ## Seat Detector
 Seat detector is made utilizing YOLOv3.
 
@@ -17,6 +18,7 @@ Pose Estimator is based on MoveNet thunder version
 ## Level Regressor
 Level regressor is a 3-layer dense layer model
 
+## Communication
 
 
 ## Acquirement
