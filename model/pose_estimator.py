@@ -25,7 +25,7 @@ class PoseEstimator(nn.Module) :
         self.image = tf.image.flip_up_down(self.image)
         self.input = self.image
         self.input = tf.image.resize(self.input, [256,256])
-        self.input*=256
+        #self.input*=256
         self.input = tf.cast(self.input, dtype= tf.int32)
         self.input = tf.reshape(self.input, [1,256,256,3])
 
@@ -98,8 +98,8 @@ class PoseEstimator(nn.Module) :
 
         # Show the plotted image.
         plt.show()
-        """
         
+        """
             # Output is a [1, 1, 17, 3] tensor.
         keypoints = tf.squeeze(outputs['output_0'])
         keypoints = keypoints.numpy()
