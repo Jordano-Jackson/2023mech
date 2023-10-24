@@ -7,13 +7,9 @@ class LevelRegressor(nn.Module) :
     def __init__(self) :
         super(LevelRegressor, self).__init__()
         self.layer = nn.Sequential(
-            nn.Linear(8,16),
+            nn.Linear(2,64),
             nn.ReLU(),
-            nn.Linear(16,8),
-            nn.ReLU(),
-            nn.Linear(8,4),
-            nn.ReLU(),
-            nn.Linear(4,1)
+            nn.Linear(64,1)
         )
 
     def forward(self, x) :
