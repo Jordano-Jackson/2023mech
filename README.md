@@ -55,3 +55,8 @@ YOLOv3 weight file can be downloaded using `wget https://pjreddie.com/media/file
 
 [3] Next-Generation Pose Detection with MoveNet and TensorFlow.js. (n.d.-b). https://blog.tensorflow.org/2021/05/next-generation-pose-detection-with-movenet-and-tensorflowjs.html
 
+## Developers
+<ul>
+  <li><a href="https://github.com/xwsa568">Youngseo Kim</a></li>
+  <li><a href="https://github.com/Jordano-Jackson">Jihwan Hong</a></li>
+</ul>
