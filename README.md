@@ -42,7 +42,10 @@ The regressor receives the heights of the left shoulder and right shoulder and t
 
 
 ## Communication
+SendNum sends how much to rotate the stepper motor to esp32. It was implemented through the pybluez library. It transmits by distinguishing direction 0 or 1 and degree that absolute of difference between current and estimated level.
 
+Communication between Arduino uno and Esp32 is simplex via softserial. 
+Firmware upload is required for each.
 
 ## Acquirement
 
