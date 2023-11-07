@@ -7,6 +7,9 @@
 ## Overview
 ![image](https://github.com/Jordano-Jackson/2023mech/assets/19871043/d461c4ac-83dc-43a8-bf87-17728cdc69a9)
 
+![demo](https://github.com/Jordano-Jackson/2023mech/assets/19871043/1488d1c0-812d-47c7-99ab-9d671d38269a)
+
+
 # Introduction 
 Proper seat belt usage is crucial for vehicle safety. However, seat belts are typically designed for the average adult male, causing issues for individuals with different body types. To address this, we propose an AI-based system that automatically adjusts seat belt height. Using in-vehicle cameras, the system collects passenger body data and calculates the ideal seat belt position. A stepper motor then adjusts the seat belt accordingly, ensuring a secure fit. Our device aims to reduce accident fatalities and prevent secondary injuries caused by improper seat belt positioning.
 
